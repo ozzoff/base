@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: "monument";
+        
+        text-transform: uppercase;
+    }
+    
+    p{
+        font-size: 20px;
+        font-weight: 100;
+        
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    .t p{
+        width: 50%;
+    }
+
+    .char{
+        transform: translateY(250px);
+        transition: 0.6s;
+        
+
+
+    }
+    .div{
+        height: 200vh;
+        width: 100%;
+
+    }
+    
+</style>
+</head>
+<body>
+    <div class="div">
+
+    </div>
+    <div class="t">
+        <p id="my-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab magnam asperiores ea perspiciatis delectus voluptate incidunt corporis tempora laboriosam praesentium.</p>
+    </div>
+    
+
+
+    <div class="div"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+
+    <script>
+
+        let txt=new SplitType("#my-text")
+
+        gsap.registerPlugin(ScrollTrigger)
+
+
+        gsap.to(".char", {
+            y:0,
+            stagger:0.001,
+            duration:0.1,
+            scrollTrigger:{
+                trigger:".char",
+                
+            }
+
+
+
+        })
+
+
+    </script>
+</body>
+</html>
